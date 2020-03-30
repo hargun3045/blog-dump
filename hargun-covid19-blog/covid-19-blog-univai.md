@@ -12,14 +12,14 @@ So for this post, let’s try to forget the bone-chilling present of infections,
 
 It’s the year 2050, and you can drive a Tesla on Mars (only at a discount price of 3 million bitcoin)
 
-![](/images/tesla.jpg)
+![](hargun-covid19-blog/images/tesla.jpg)
 
 COVID-19 is a thing of the past, when millions of people were saved by a new vaccination developed by Israeli scientists.
 
 But quietly, an ‘antigenic drift’ has taken place, and a Chinese man eating ‘martian bat-soup’ in the ‘Sea of Tranquility’ has no idea he is going to be patient zero of **COVID-49**. 
 <p>History repeats itself, a new strain, with the same symptoms has caused another pandemic.</p>
 
-![](/images/image2.jpeg)
+![](hargun-covid19-blog/images/image2.jpeg)
 
 But this time we have a more serious problem\! Almost all doctors died tackling the COVID-19.  
 Well, not all are dead, but those who didn’t die are now data scientists because *‘the pay is just so good\!’* while the rest are dentists, which really doesn’t count. We just don’t have enough medics to tackle a fresh outbreak.
@@ -35,7 +35,7 @@ With artificial intelligence now pervasively used to decide on almost all proble
 Since everything about this outbreak is the same, except that we have no vaccination against it yet, all we need is a dataset, and we’re done\!   
 And guess what, a quick search on twitter reveals just exactly this type of dataset. 
 
-[![](/images/image3.png)](https://twitter.com/kdpsinghlab/status/1239416911668092928)
+[![](hargun-covid19-blog/images/image3.png)](https://twitter.com/kdpsinghlab/status/1239416911668092928)
 
 It says for ‘**educational purpose only**’ but who cares? It’s not like we’re writing a research paper, we’re building a limited liability company\!
 
@@ -561,18 +561,18 @@ Now the author clearly mentioned that the dataset is flawed at best. But let’s
 
 
 
-![](/images/output_2_0.png)
+![](hargun-covid19-blog/images/output_2_0.png)
 
 The above graph shows that the mean age of people classified under **High Urgency** is *lower* than those under **Low Urgency** which clearly is against established study that [older age people are at greater risk](https://www.vox.com/2020/3/12/21173783/coronavirus-death-age-covid-19-elderly-seniors?__c=1)
 
 
 
-![](/images/output_3_0.png)
+![](hargun-covid19-blog/images/output_3_0.png)
 
 The dataset is less revealing on the gender of the patients, and in fact correctly shows higher hospitalisation of men above the age of 80 than women.
 
 
-![](/images/output_4_0.png)
+![](hargun-covid19-blog/images/output_4_0.png)
 
 But the biggest reveal is in the above graph as it shows the percentage of hospitalisations for patients of different symptoms.
 
@@ -583,7 +583,7 @@ According to the dataset, those with **sore throat** and **chills** have signifi
 
 So it's clear that the model has limitations. One reason for that is that we have an imbalanced dataset with low urgency admission entries making up nearly 75% of the data.
 
-![Imbalanced dataset](/images/Imbalance.png)
+![Imbalanced dataset](hargun-covid19-blog/images/Imbalance.png)
 
 To better train our model, our loss function needs to account for this imbalance and one frutiful approach is to use a **focal loss**. (Although the concept of focal loss is beyond the scope of the current discussion, an excellent introduction can be found [here](https://www.dlology.com/blog/multi-class-classification-with-focal-loss-for-imbalanced-datasets/))
 
@@ -595,19 +595,19 @@ After re-training the model with a new loss function, we observe the confusion m
 
 
 -------------------------|-------------------------
-![](/images/dmcm.png)  |  ![](/images/dmfocalcm.png)
+![](hargun-covid19-blog/images/dmcm.png)  |  ![](hargun-covid19-blog/images/dmfocalcm.png)
 
 As you can see above, we got almost twice the number of 'High Urgency' patients correctly after using the focal loss.
 
 We can also plot a [Cumulative gains curve](https://towardsdatascience.com/meaningful-metrics-cumulative-gains-and-lyft-charts-7aac02fc5c14) to see how much better our model is compared to a baseline logistic regression model.
 
-![Cumulative gains](/images/cg.png)
+![Cumulative gains](hargun-covid19-blog/images/cg.png)
 
 Our model isn't terribly great, but by testing 60% of the population, it can detect 80% of the 'High Urgency' cases. This is handy if say we have limited test kits.
 
 You can see the model in action through this [app](https://covid19-app-272409.appspot.com/), that tells you how many days you should wait before you seek medical help on a possible coronavirus infection.
 
-[![app](/images/app.png)](https://covid19-app-272409.appspot.com/){: .align-center}
+[![app](hargun-covid19-blog/images/app.png)](https://covid19-app-272409.appspot.com/){: .align-center}
 
 ## Concluding remarks
 
