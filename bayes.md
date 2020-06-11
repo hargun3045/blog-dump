@@ -1,6 +1,10 @@
 # Why I wish I knew Bayes Theorem before my surgery
 
-> And how you may benefit from knowing it**
+> And how you may benefit from knowing it
+
+https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images
+
+![](https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/bae.png)
 
 **Bayes theorem** — The confusing relation you may vaguely remember from high school probability class that made you think, *“When am I going to use any of this in real life?”*
 
@@ -11,6 +15,8 @@ To tell you that, I must tell you how I developed a breathing problem at the fir
 So let’s begin with a quick rewind to the year 2017, a year when I was rocking in my first job after college as a project manager at Cisco Systems, having learned business-level french in 6 months and achieved a promotion after my very first year.
 
 Despite my professional successes, my health was declining, as the city I was living in, Bangalore, usually known as the **city of rivers**, saw a record increase in pollution, warming and water contamination. Such a worsening state of the city had a negative effect on me, as simple jogs around my neighbourhood left me with a perpetually stuffed nose and frequent breathing difficulties leading to headaches and sleepless nights.
+
+![](https://static.toiimg.com/thumb/52405697.cms?resizemode=4&width=400)<p style="text-align: center;">*This is not snow*</p>
 
 All this took a turn for the worse at the end of the year, as I woke up one Sunday morning, not being able to breathe at all\! But the worst was yet to come, as a routine visit to the emergency room at a nearby hospital, became the start of a nightmare when instead of my regular nasal spray prescriptions, the emergency physician suggested that I should consider a nasal correction surgery to aide my breathing.
 
@@ -30,6 +36,11 @@ At that time, it fit perfectly. A surgery with a recovery time for 5 days, and I
 **Post Surgery**
 
 The surgery, apparently, was a success (in the words of the doctor, obviously), but I had a huge stuffing in my nose, which made it difficult for me to make any judgement.   
+
+![]( =250x)
+
+<img src="https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/stuffednose.jpg" class="center" width="300" height="400"/>
+
 I spent the next two days breathing from my mouth, and finally after painfully waiting for what seemed like a decade, my nose was cleared and ready to pump air\!
 
 But, like the returns promised on the next *hotshot stock* I didn’t feel like I gained anything at all. My questions and concerns were politely ignored, and the doctor said it usually takes about 4 weeks for full breathing function to resume.   
@@ -45,6 +56,8 @@ Frankly speaking, one night, I broke down, but when I *tried* to cry, the tears 
 Something was wrong, and with not much changed in my life recently, it had to be the medical intervention, and I had to figure out how I could fix it.
 
 So, I spent the next three months, meeting all sorts of doctors, with an honest attempt to find answers, but the trend appeared as though a doctor with a particular speciality, somehow diagnosed me with something he was specialised in\! (Kind of like the doctor’s edition of *if you have a hammer, everything seems like a nail.)*
+
+![](https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/doctor.jpg)
 
 I felt I was walking on the edge of ambiguity among medics, and I didn’t want to be the *life is so cruel* guy. I just wanted to breathe well and be happy, and not stress about the newly welcomed misery of my life (which was reminded to me with every breath)
 
@@ -103,9 +116,36 @@ which is a much more relevant question to me than the general,
 
 *What are my odds of being happy with the operation? *
 
-Some math here
+Below is an *Emoji Matrix* that conveys the ideas.
 
-and here
+![](https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/RelationsOnly.png)
+
+H and NH are the *Happy* and the *Not Happy* groups
+and A and NA are the *Allergic* and *Not Allergic* group
+
+In terms of probability, our problem is to find the odds of having a satisfactory result, given that I belong to the Allergic class. i.e.
+$$P(Happy|Allergic)$$
+
+Now employing Bayes theorem we get
+
+
+$$P(Happy|Allergic) = \frac{P(Allergic/Happy)*P(Happy)}{P(Allergic)}$$
+
+Using *Law of Total Probability* from above, we can calculate the denominator as a sum of conditional probabilities.
+
+$$P(Happy|Allergic) = \frac{P(Allergic/Happy)*P(Happy)}{P(Allergic/Happy)*P(Happy) + P(Allergic/NotHappy)*P(NotHappy)}$$
+<br></br>
+Now, $P(Happy)$ we know from realself.com and $P(Allergic|Happy)$ can be approximated from the subjective reviews.
+
+Taking $P(Allergic|Happy)= 10\%$ and $P(Allergic|NotHappy)= 90\%$ as very few of those with happy reviews had allergies, and most of the unhappy reviewers showed signs of allergic pre-conditions.
+
+With those values, our *Emoji Matrix* now looks like this:
+
+![](https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/EmojiMatrix.png)
+
+Now, we can answer out question,
+
+$$P(Happy|Allergy) = \frac{9}{9+9} = 50\%$$
 
 So the odds of a **happy** outcome, given I was allergic was just about **50%** \!\!\!
 
@@ -121,9 +161,15 @@ Would I be willing to risk a medical intervention, on a sensory receptor that is
 
 If I had such information, I’d rather be compelled to try every other possible non-invasive remedy, from yoga to a trip to the Himalayas, before taking such a leap of faith, and gamble on life-long repercussions. 
 
+Despite the gross approximations, while writing this post, I came across this research study from [National Center for Biotechnology Information](https://pubmed.ncbi.nlm.nih.gov/19936374/) that made a qualitative study on the effects of allergies on septoplasty outcomes.
+
+Alarmingly, the results of the detailed study had a similar conclusion to the one we made above!
+
+![](https://raw.githubusercontent.com/hargun3045/blog-dump/master/bayes-images/allergy.jpeg)
+
 ### Parting thoughts
 
-Obviously hindsight is 2020, but Bayes theorem gives solid lessons for the future as well, which is:  
+Hindsight is always 2020, but Bayes theorem gives solid lessons for the future as well, which is:  
 *Unconditional* probability figures and statistics such as surgery success rates, or mortality rates of infections, are all a facade, and mask too much information to be of serious use.   
 It’s essential to at least try to make some ***conditional*** estimates, and carefully examine how the odds change for your specific condition **before** you take a decision.
 
